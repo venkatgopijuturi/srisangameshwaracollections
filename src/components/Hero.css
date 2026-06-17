@@ -1,0 +1,126 @@
+/* ═══════════════════════════════════════ */
+/*  Hero Section — Fixed Parallax Style   */
+/* ═══════════════════════════════════════ */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: var(--bg-main);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 650px;
+}
+
+.luxury-text-gradient {
+    padding-right: 20px;
+}
+
+/* Slide-Up Animations */
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpRefine 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+.slide-up-delayed {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpRefine 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards 0.3s;
+}
+
+.slide-up-delayed-2 {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpRefine 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards 0.5s;
+}
+
+@keyframes slideUpRefine {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.6s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hero Visual Side */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 110px 6% 2rem;
+    }
+
+    .hero-content {
+        margin-bottom: 2rem;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 2rem !important;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 110px 5% 2rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+        letter-spacing: 3px !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+        line-height: 1.7 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 4% 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem !important;
+        letter-spacing: 2px !important;
+    }
+}

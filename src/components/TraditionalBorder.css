@@ -1,0 +1,348 @@
+/* ═══════════════════════════════════════════════════════ */
+/*  Traditional Indian Ornamental Border Styles           */
+/*  Elaborate Gold Filigree with Ruby Gem Accents         */
+/*  Sri Sangameshwara Collection — Pure CSS + SVG         */
+/* ═══════════════════════════════════════════════════════ */
+
+.traditional-border-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 0;
+    z-index: 1;
+    isolation: isolate;
+}
+
+/* ── Ornamental Dot Chain Row ── */
+.border-dot-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 3px 0;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.border-dot {
+    width: 2.5px;
+    height: 2.5px;
+    border-radius: 50%;
+    background: var(--primary-gold);
+    opacity: 0.35;
+    flex-shrink: 0;
+}
+
+.border-dot.accent {
+    width: 3px;
+    height: 3px;
+    opacity: 0.55;
+    background: linear-gradient(135deg, var(--primary-gold), var(--primary-gold-light));
+    box-shadow: 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.border-dot.gem {
+    width: 5px;
+    height: 5px;
+    opacity: 0.8;
+    background: radial-gradient(circle, #8B1A1A 40%, #6B0F0F 100%);
+    border: 0.5px solid var(--primary-gold);
+    box-shadow: 0 0 6px rgba(139, 26, 26, 0.3), 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* ── Fine Gold Lines ── */
+.border-fine-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(212, 175, 55, 0.05) 5%,
+            rgba(212, 175, 55, 0.2) 20%,
+            rgba(212, 175, 55, 0.5) 40%,
+            var(--primary-gold) 50%,
+            rgba(212, 175, 55, 0.5) 60%,
+            rgba(212, 175, 55, 0.2) 80%,
+            rgba(212, 175, 55, 0.05) 95%,
+            transparent 100%);
+}
+
+.border-fine-line.thick {
+    height: 1.5px;
+    box-shadow: 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+/* ── Main Pattern Strip ── */
+.border-pattern-strip {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 40px;
+}
+
+.border-pattern-strip svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ── Shimmer Animation ── */
+.border-shimmer-overlay {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 15%,
+            rgba(255, 255, 255, 0.1) 35%,
+            rgba(255, 255, 255, 0.35) 50%,
+            rgba(255, 255, 255, 0.1) 65%,
+            rgba(255, 255, 255, 0) 85%,
+            transparent 100%);
+    animation: borderShimmerSweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes borderShimmerSweep {
+    0% {
+        left: -50%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
+}
+
+/* ── Ambient Glow ── */
+.border-glow {
+    position: absolute;
+    inset: -4px 15% -4px 15%;
+    background: radial-gradient(ellipse at center,
+            rgba(212, 175, 55, 0.1) 0%,
+            rgba(139, 26, 26, 0.04) 40%,
+            transparent 70%);
+    animation: borderGlowPulse 8s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes borderGlowPulse {
+    0% {
+        opacity: 0.3;
+        transform: scaleX(0.85);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scaleX(1.05);
+    }
+
+    100% {
+        opacity: 0.4;
+        transform: scaleX(0.95);
+    }
+}
+
+/* ── Grand Center Medallion ── */
+.border-center-medallion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    filter: drop-shadow(0 2px 12px rgba(212, 175, 55, 0.35));
+    background: var(--bg-main, #FAF9F6);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+/* ── Variant: Inverted (dark backgrounds) ── */
+.traditional-border-wrapper.inverted .border-dot {
+    background: var(--primary-gold-light);
+    opacity: 0.2;
+}
+
+.traditional-border-wrapper.inverted .border-dot.accent {
+    opacity: 0.4;
+    background: linear-gradient(135deg, #E6BE8A, #F0D4A0);
+}
+
+.traditional-border-wrapper.inverted .border-dot.gem {
+    background: radial-gradient(circle, #A0522D 40%, #8B4513 100%);
+    border-color: #E6BE8A;
+    opacity: 0.6;
+    box-shadow: 0 0 6px rgba(160, 82, 45, 0.3), 0 0 3px rgba(230, 190, 138, 0.2);
+}
+
+.traditional-border-wrapper.inverted .border-fine-line {
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(230, 190, 138, 0.05) 5%,
+            rgba(230, 190, 138, 0.2) 20%,
+            rgba(230, 190, 138, 0.4) 40%,
+            rgba(230, 190, 138, 0.5) 50%,
+            rgba(230, 190, 138, 0.4) 60%,
+            rgba(230, 190, 138, 0.2) 80%,
+            rgba(230, 190, 138, 0.05) 95%,
+            transparent 100%);
+}
+
+.traditional-border-wrapper.inverted .border-center-medallion {
+    background: var(--bg-dark, #0B0B0B);
+}
+
+.traditional-border-wrapper.inverted .border-glow {
+    background: radial-gradient(ellipse at center,
+            rgba(230, 190, 138, 0.08) 0%,
+            rgba(160, 82, 45, 0.03) 40%,
+            transparent 70%);
+}
+
+/* ── Variant: Compact ── */
+.traditional-border-wrapper.compact {
+    transform: scaleY(0.7);
+    transform-origin: center;
+}
+
+/* ── Ornamental Section Divider ── */
+.ornamental-section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 10%;
+    width: 100%;
+}
+
+.ornamental-section-divider .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(212, 175, 55, 0.15),
+            rgba(212, 175, 55, 0.4),
+            rgba(212, 175, 55, 0.15),
+            transparent);
+}
+
+.ornamental-section-divider .divider-motif {
+    color: var(--primary-gold);
+    font-size: 1rem;
+    opacity: 0.5;
+    animation: motifPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes motifPulse {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* ── Ornamental Frame (for cards) ── */
+.ornamental-frame {
+    position: relative;
+}
+
+.ornamental-frame::before,
+.ornamental-frame::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: var(--primary-gold);
+    opacity: 0.35;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 15;
+}
+
+.ornamental-frame::before {
+    top: 10px;
+    left: 10px;
+    border-top: 1.5px solid;
+    border-left: 1.5px solid;
+}
+
+.ornamental-frame::after {
+    bottom: 10px;
+    right: 10px;
+    border-bottom: 1.5px solid;
+    border-right: 1.5px solid;
+}
+
+.ornamental-frame:hover::before,
+.ornamental-frame:hover::after {
+    opacity: 0.85;
+    transform: scale(1.15);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .border-dot-row {
+        gap: 4px;
+    }
+
+    .border-dot {
+        width: 2px;
+        height: 2px;
+    }
+
+    .border-dot.accent {
+        width: 2.5px;
+        height: 2.5px;
+    }
+
+    .border-dot.gem {
+        width: 4px;
+        height: 4px;
+    }
+
+    .border-pattern-strip {
+        min-height: 30px;
+    }
+
+    .traditional-border-wrapper.compact {
+        transform: scaleY(0.55);
+    }
+
+    .ornamental-frame::before,
+    .ornamental-frame::after {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .border-pattern-strip svg {
+        transform: scale(0.7);
+        transform-origin: center;
+    }
+
+    .border-center-medallion svg {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,0 +1,282 @@
+/* ═══════════════════════════════════════════════ */
+/*  Product Card — Premium Luxury Redesign        */
+/* ═══════════════════════════════════════════════ */
+
+.product-card {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.product-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(0, 0, 0, 0.04);
+    transform: translateY(-6px);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+/* ── Image Area ── */
+.product-image-container {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #f8f7f4;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.06);
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f7f4, #f0ede5);
+}
+
+/* ── Badges ── */
+.product-badge {
+    position: absolute;
+    top: 0.75rem;
+    z-index: 10;
+    font-size: 0.58rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 2px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ── Wishlist Toggle ── */
+.product-wishlist-toggle {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.product-card:hover .product-wishlist-toggle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-wishlist-toggle.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-wishlist-toggle:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1) !important;
+}
+
+/* ── Quick Action Overlay on Image ── */
+.product-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 5;
+}
+
+.product-card:hover .product-image-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quick-inquire-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.quick-inquire-btn:hover {
+    background: var(--primary-gold);
+    color: #fff;
+}
+
+/* ── Product Info Section ── */
+.product-info-refined {
+    padding: 1.2rem 1.2rem 1.4rem;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name-modern {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.6rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ── Price Block ── */
+.product-price-modern {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.price-new-modern {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.price-old-modern {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-ultra-muted);
+    text-decoration: line-through;
+}
+
+.price-save {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.62rem;
+    color: #2e7d32;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: rgba(46, 125, 50, 0.08);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+}
+
+/* ── Bottom CTA ── */
+.product-action-refined {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.buy-now-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--text-main);
+    color: #fff;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.buy-now-btn:hover {
+    background: var(--primary-gold);
+    color: #fff;
+}
+
+/* ── Shine Effect ── */
+.luxury-shine {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.05) 45%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0.05) 55%,
+            transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.product-card:hover .luxury-shine {
+    animation: shineEffect 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes shineEffect {
+    0% {
+        transform: translate(-30%, -30%);
+    }
+
+    100% {
+        transform: translate(30%, 30%);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .product-wishlist-toggle {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .product-image-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .product-info-refined {
+        padding: 1rem;
+    }
+}

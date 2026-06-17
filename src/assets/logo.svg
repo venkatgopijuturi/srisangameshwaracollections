@@ -1,0 +1,27 @@
+<svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gopuram (Temple Tower) Motif -->
+  <path d="M100 20L92 28H108L100 20Z" fill="#D4AF37"/>
+  <path d="M88 28H112V36H88V28Z" fill="#D4AF37" fill-opacity="0.8"/>
+  <path d="M84 36H116V46H84V36Z" fill="#D4AF37" fill-opacity="0.9"/>
+  <path d="M80 46H120V58H80V46Z" fill="#D4AF37"/>
+  <path d="M76 58H124V72H76V58Z" fill="#D4AF37" fill-opacity="0.95"/>
+  
+  <!-- Intricate Detail Lines for Gopuram -->
+  <path d="M96 32H104" stroke="#B8860B" stroke-width="0.5"/>
+  <path d="M92 41H108" stroke="#B8860B" stroke-width="0.5"/>
+  <path d="M88 52H112" stroke="#B8860B" stroke-width="0.5"/>
+  <path d="M84 65H116" stroke="#B8860B" stroke-width="0.5"/>
+  
+  <!-- Decorative Swirls (Left) -->
+  <path d="M70 65C60 60 50 70 45 65C40 60 45 50 55 52C65 54 70 60 70 65Z" stroke="#D4AF37" stroke-width="1.5"/>
+  <path d="M45 65C35 68 25 62 20 65" stroke="#D4AF37" stroke-width="1" stroke-dasharray="2 2"/>
+  
+  <!-- Decorative Swirls (Right) -->
+  <path d="M130 65C140 60 150 70 155 65C160 60 155 50 145 52C135 54 130 60 130 65Z" stroke="#D4AF37" stroke-width="1.5"/>
+  <path d="M155 65C165 68 175 62 180 65" stroke="#D4AF37" stroke-width="1" stroke-dasharray="2 2"/>
+  
+  <!-- Text: Sri Sangameshwara (Simplified representation for SVG) -->
+  <text x="100" y="95" text-anchor="middle" fill="#B8860B" font-family="Poppins" font-weight="600" font-size="14" letter-spacing="1">SRI SANGAMESHWARA</text>
+  <path d="M40 105H85M115 105H160" stroke="#D4AF37" stroke-width="1" opacity="0.6"/>
+  <text x="100" y="110" text-anchor="middle" fill="#D4AF37" font-family="Inter" font-weight="500" font-size="6" letter-spacing="4">COLLECTIONS</text>
+</svg>
